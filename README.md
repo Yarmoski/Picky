@@ -15,7 +15,7 @@ I also learned a great deal about working with APIs through Yelp's Fusion API. I
 ## Roadmap
 The next steps for Picky involve expanding the functionality of its core feature: providing images of local food businesses for the user. This would begin with better location accuracy by taking in the user's exact longitude and latitude either through manual input or other means such as BSSID methods. Yelp's Fusion API supports this, as it allows longitude and latitude parameters in its query interface. 
 
-Another addition regarding search parameters would be check boxes or custom inputs for search terms to provide results specific to the user's current needs. This could be in the form of toggleable areas for categories such as "breakfast" or "casual" as well as custom inputs used for the Yelp query.
+Another addition regarding search parameters would be check boxes or custom inputs for search terms to provide results specific to the user's current needs. This could be in the form of toggleable areas for categories such as "breakfast" or "casual" as well as custom inputs used for the Yelp query. To add onto this, the ability to specify how many pages or results are returned would also be implemented.
 
 Once these extra QOL features are implemented to Picky, the next obvious step would be to transition to a mobile app. Modern internet usage is transitioning to apps. Additionally, those looking for places to eat are often not at home with access to a desktop computer. While users could technically use their phone's internet browser to access Picky, many are not willing to take the extra steps to do so. An app would provide a convenient and mobile-friendly experience for Picky users.
 
