@@ -2,7 +2,7 @@
 A web application that utilizes the Yelp Fusion API to help you decide where to eat.
 
 ## How to Use
-Go to [Picky.tech]: http://www.Picky.tech and enter in a location. Picky will provide you with one image at a time. If you want to learn more about the restaurant that the image is from, simply click on the image and the Yelp page will open in a new tab. Click the "Another One!" button to advance to the next image.
+Go to [Picky.tech](http://www.Picky.tech) and enter in a location. Picky will provide you with one image at a time. If you want to learn more about the restaurant that the image is from, simply click on the image and the Yelp page will open in a new tab. Click the "Another One!" button to advance to the next image.
   
 ### Dev use
 Create a directory and store the repo files there. Make sure you have the dependencies (found in requirements.txt) installed in your environment. Navigate to the directory you created and run the file "Picky.py" to start the development server on port 5000 (localhost:5000). 
