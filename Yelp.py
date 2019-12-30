@@ -135,11 +135,11 @@ def execute(place):
 
     input_values = parser.parse_args()
     print(input_values)
-    try:
-        businesses = query_api(input_values.term, input_values.location, 0)
+
+    businesses = query_api(input_values.term, input_values.location, 0)
+    if businesses != None:
         businesses.extend(query_api(input_values.term, input_values.location, input_values.offset))
-    except HTTPError as error:
-        return None
+
     return businesses
    
 
