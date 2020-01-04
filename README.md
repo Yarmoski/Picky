@@ -19,6 +19,7 @@ and run the file "Picky.py" to start the development server on port 5000 (localh
 ```
 python Picky.py
 ```
+Go to 127.0.0.1:5000 (localhost:5000) on your web browser to view the site.
 
 ## Roadmap of features
 - Precise location (long, lat)
