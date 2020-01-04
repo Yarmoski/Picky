@@ -3,14 +3,10 @@ from __future__ import print_function
 import os
 import random
 import argparse
-import json
-import pprint
 import requests
 import sys
 import urllib
-from urllib.error import HTTPError
 from urllib.parse import quote
-from urllib.parse import urlencode
 
 from flask import url_for
 
@@ -24,7 +20,7 @@ BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 
 #Variables used for Yelp query
 DEFAULT_TERM = random.choice(['food', 'restaurant','casual dining', 'eat', 'good dining'])
-SEARCH_LIMIT = 50
+SEARCH_LIMIT = 25
 
 
 #Thank you to Yelp.com for starter code!
@@ -128,10 +124,12 @@ def execute(place):
         place(str): location input
     """
     parser = argparse.ArgumentParser()
+    
+    random_offset = random.randint(26, 70)
 
     parser.add_argument('-q', '--term', dest='term', default=DEFAULT_TERM, type=str)
     parser.add_argument('-l', '--location', dest='location', default=place, type=str)
-    parser.add_argument('-o', '--offset', dest='offset', default=51, type=int)
+    parser.add_argument('-o', '--offset', dest='offset', default=random_offset, type=int)
 
     input_values = parser.parse_args()
     print(input_values)
