@@ -22,6 +22,7 @@ python Picky.py
 Go to 127.0.0.1:5000 (localhost:5000) on your web browser to view the site.
 
 ## Roadmap of features
+- Non-food attractions mode
 - Precise location (long, lat)
 - Custom search terms
 - Custom number of results
