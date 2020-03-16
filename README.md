@@ -21,6 +21,13 @@ python Picky.py
 ```
 Go to 127.0.0.1:5000 (localhost:5000) on your web browser to view the site.
 
+## Motivation
+Finding a place to eat is ALWAYS a hassle with my friends. They are usually indecisive or refuse to push their preference above others, ultimately resulting in a dialogue that can be boiled down to "You choose!" and "No, you choose!" over and over again. 
+
+Picky aims to solve this problem by presenting food from local restaurants in a fashion similar to the dating app Tinder. Using the power of images, Picky skips the annoying social interaction that comes bundled with picking a place to eat. 
+
+After running the idea by some of my friends, I found that there was genuine interest which motivated me to spend my winter break working on and learning new information that would help me on Picky. 
+
 ## Roadmap of features
 - Non-food attractions mode
 - Precise location (long, lat)
@@ -42,13 +49,6 @@ Once these extra QOL features are implemented to Picky, the next obvious step wo
 There is also the design choice of whether to preload the Yelp queries before browsing to provide a smoother experience (current design) or to load them incrementally as the user browses. While the former choice would result in less time spent upfront, it would slow down the speed at which the user can scroll through the restaurants. I opted to go for the preload option because I and others that I asked would rather take a slow initial load time for a smoother experience than a fast initial load with a rougher scrolling experience.
 
 While the above roadmap features are more practical than the one that follows, I felt like it was worth writing down. It could be beneficial to utilize machine learning to better retrieve more relevant images from Yelp. Yelp's Fusion API provides up to three images that "best represent the business" supposedly chosen by intelligent machine learning algorithms. However, these photos are sometimes not of food, which is the topic of interest, but instead of people or inanimate objects within or surrounding the business. Machine learning could be used to identify pictures of food and only display those on the Picky interface.
-
-## Motivation
-Finding a place to eat is ALWAYS a hassle with my friends. They are usually indecisive or refuse to push their preference above others, ultimately resulting in a dialogue that can be boiled down to "You choose!" and "No, you choose!" over and over again. 
-
-Picky aims to solve this problem by presenting food from local restaurants in a fashion similar to the dating app Tinder. Using the power of images, Picky skips the annoying social interaction that comes bundled with picking a place to eat. 
-
-After running the idea by some of my friends, I found that there was genuine interest which motivated me to spend my winter break working on and learning new information that would help me on Picky. 
 
 ## What I learned
 While developing Picky, I learned an enormous amount about web development and the challenges that come with it. I found that I would have had significantly less trouble developing Picky as a local service than as a web application. Working with HTML and CSS, especially CSS, was extremely painful since my prior experience with the two is minimal. However, I am now MUCH more comfortable working with the two and I feel that I can confidently apply HTML/CSS skills to future projects. 
