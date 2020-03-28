@@ -20,7 +20,7 @@ BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 
 #Variables used for Yelp query
 DEFAULT_TERM = random.choice(['food', 'restaurant','casual dining', 'eat', 'good dining'])
-SEARCH_LIMIT = 25
+SEARCH_LIMIT = 20
 
 
 #Thank you to Yelp.com for starter code!
@@ -118,25 +118,35 @@ def business_info(businesses, number):
         return [photos[photo_number], url]
     return [placeholder_img, url]
 
-def execute(place):
+def execute(place, term):
     """returns a list of businesses with the specified search term and location
     Args:
         place(str): location input
     """
-    parser = argparse.ArgumentParser()
-    
-    random_offset = random.randint(26, 70)
 
-    parser.add_argument('-q', '--term', dest='term', default=DEFAULT_TERM, type=str)
+    if term == "":
+        term = DEFAULT_TERM
+
+    parser = argparse.ArgumentParser()
+
+    random_offset = random.randint(31, 60)
+
+    parser.add_argument('-q', '--term', dest='term', default=term, type=str)
     parser.add_argument('-l', '--location', dest='location', default=place, type=str)
     parser.add_argument('-o', '--offset', dest='offset', default=random_offset, type=int)
 
     input_values = parser.parse_args()
-    print(input_values)
+    #print(input_values)
 
+    #add the first page of results to businesses
     businesses = query_api(input_values.term, input_values.location, 0)
-    if businesses != None:
-        businesses.extend(query_api(input_values.term, input_values.location, input_values.offset))
+    businesses2 = query_api(input_values.term, input_values.location, input_values.offset)
+
+
+
+    #if the businesses2 list is not empty, add it onto businesses
+    if businesses2:
+        businesses = businesses + businesses2
 
     return businesses
    
