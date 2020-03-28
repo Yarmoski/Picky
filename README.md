@@ -41,6 +41,7 @@ After running the idea by some of my friends, I found that there was genuine int
 - User-created saved list of businesses per session
 - MOBILE APP
 - Machine learning food image recognition
+- Load-as-you-go
 
 ### Roadmap Elaborated
 The next steps for Picky involve expanding the functionality of its core feature: providing images of local food businesses for the user. This would begin with better location accuracy by taking in the user's exact longitude and latitude either through manual input or other means such as BSSID methods. Yelp's Fusion API supports this, as it allows longitude and latitude parameters in its query interface. 
