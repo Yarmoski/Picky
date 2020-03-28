@@ -32,11 +32,11 @@ Picky aims to solve this problem by presenting food from local restaurants in a 
 After running the idea by some of my friends, I found that there was genuine interest which motivated me to spend my winter break working on and learning new information that would help me on Picky. 
 
 ## Roadmap of features
-- ~~Non-food attractions mode
+- ~~Non-food attractions mode~~
 - Display other stats such as rating, closed status, reviews
 - Display service types
 - Precise location (long, lat)
-- ~~Custom search terms
+- ~~Custom search terms~~
 - Custom number of results
 - User-created saved list of businesses per session
 - MOBILE APP
