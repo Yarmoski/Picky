@@ -30,6 +30,7 @@ After running the idea by some of my friends, I found that there was genuine int
 
 ## Roadmap of features
 - Non-food attractions mode
+- Display other stats such as rating, closed status, reviews
 - Precise location (long, lat)
 - Custom search terms
 - Custom number of results
