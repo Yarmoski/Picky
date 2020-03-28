@@ -1,10 +1,13 @@
 # Picky
-A web application that utilizes the Yelp Fusion API to help you decide where to eat.
+A web application that utilizes the Yelp Fusion API to help you decide where to eat. (and in v2.0, Picky works with non-food activites as well!)
 
 ## How to Use
-Go to [Picky](https://yarmoski.pythonanywhere.com/) and enter in a location. Once the page is finished loading, (this could take ~5-25 seconds depending on location and API status) Picky will provide you with one image at a time. 
+Go to [Picky](https://yarmoski.pythonanywhere.com/) and enter in a location. Picky will provide you with one image at a time. 
 
-If you want to learn more about the restaurant that the image is from, simply click on the image and the Yelp page will open in a new tab. Click the "Another One!" button to advance to the next image.
+If you want to learn more about the business that the image is from, simply click on the image and the Yelp page will open in a new tab. Click the "Another One!" button to advance to the next image.
+
+### v2.0 changes
+- You can now enter an optional search term. Without a search term, results will be of restaurants and food. Example search terms include boba, lunch, scuba diving, backpacking, electronics, and bakery. Keep in mind that searches for uncommon terms will most likely yield fewer results.
   
 ### Dev use
 Create a directory and store the repo files there. Make sure you have the dependencies (found in requirements.txt) installed in your environment. 
@@ -22,19 +25,20 @@ python Picky.py
 Go to 127.0.0.1:5000 (localhost:5000) on your web browser to view the site.
 
 ## Motivation
-Finding a place to eat is ALWAYS a hassle with my friends. They are usually indecisive or refuse to push their preference above others, ultimately resulting in a dialogue that can be boiled down to "You choose!" and "No, you choose!" over and over again. 
+Settling on an activity is ALWAYS a hassle with my friends. They are usually indecisive or refuse to push their preference above others, ultimately resulting in a dialogue that can be boiled down to "You choose!" and "No, you choose!" over and over again. 
 
-Picky aims to solve this problem by presenting food from local restaurants in a fashion similar to the dating app Tinder. Using the power of images, Picky skips the annoying social interaction that comes bundled with picking a place to eat. 
+Picky aims to solve this problem by presenting food from local restaurants in a fashion similar to the dating app Tinder. Using the power of images, Picky skips the annoying social interaction that comes bundled with ~~picking a place to eat~~ deciding what to do.
 
 After running the idea by some of my friends, I found that there was genuine interest which motivated me to spend my winter break working on and learning new information that would help me on Picky. 
 
 ## Roadmap of features
-- Non-food attractions mode
+- ~~Non-food attractions mode
 - Display other stats such as rating, closed status, reviews
+- Display service types
 - Precise location (long, lat)
-- Custom search terms
+- ~~Custom search terms
 - Custom number of results
-- User-created saved list of restaurants per session
+- User-created saved list of businesses per session
 - MOBILE APP
 - Machine learning food image recognition
 
