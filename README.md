@@ -33,20 +33,15 @@ After running the idea by some of my friends, I found that there was genuine int
 
 ## Roadmap of features
 - ~~Non-food attractions mode~~
-- Display other stats such as rating, closed status, reviews
-- Display service types
+- ~~Display other stats such as rating, price~~
 - Precise location (long, lat)
 - ~~Custom search terms~~
-- Custom number of results
 - User-created saved list of businesses per session
 - MOBILE APP
 - Machine learning food image recognition
-- Load-as-you-go
 
 ### Roadmap Elaborated
 The next steps for Picky involve expanding the functionality of its core feature: providing images of local food businesses for the user. This would begin with better location accuracy by taking in the user's exact longitude and latitude either through manual input or other means such as BSSID methods. Yelp's Fusion API supports this, as it allows longitude and latitude parameters in its query interface. 
-
-Another addition regarding search parameters would be check boxes or custom inputs for search terms to provide results specific to the user's current needs. This could be in the form of toggleable areas for categories such as "breakfast" or "casual" as well as custom inputs used for the Yelp query. To add onto this, the ability to specify how many pages or results are returned would also be implemented.
 
 A "saved list" could be added which would allow users to save restaurants within their session. Once they are done browsing, the user can refer back to the list and review their choices for potential places to eat or bookmark.
 
@@ -54,10 +49,10 @@ Once these extra QOL features are implemented to Picky, the next obvious step wo
 
 There is also the design choice of whether to preload the Yelp queries before browsing to provide a smoother experience (current design) or to load them incrementally as the user browses. While the former choice would result in less time spent upfront, it would slow down the speed at which the user can scroll through the restaurants. I opted to go for the preload option because I and others that I asked would rather take a slow initial load time for a smoother experience than a fast initial load with a rougher scrolling experience.
 
-While the above roadmap features are more practical than the one that follows, I felt like it was worth writing down. It could be beneficial to utilize machine learning to better retrieve more relevant images from Yelp. Yelp's Fusion API provides up to three images that "best represent the business" supposedly chosen by intelligent machine learning algorithms. However, these photos are sometimes not of food, which is the topic of interest, but instead of people or inanimate objects within or surrounding the business. Machine learning could be used to identify pictures of food and only display those on the Picky interface.
+It could be beneficial to utilize machine learning to better retrieve more relevant images from Yelp. Yelp's Fusion API provides up to three images that "best represent the business" supposedly chosen by intelligent machine learning algorithms. However, these photos are sometimes not relevant to the business, but instead of people or inanimate objects within or surrounding the business. Machine learning could be used to identify relevant pictures and only display those on the Picky interface.
 
 ## What I learned
-While developing Picky, I learned an enormous amount about web development and the challenges that come with it. I found that I would have had significantly less trouble developing Picky as a local service than as a web application. Working with HTML and CSS, especially CSS, was extremely painful since my prior experience with the two is minimal. However, I am now MUCH more comfortable working with the two and I feel that I can confidently apply HTML/CSS skills to future projects. 
+While developing Picky, I learned an enormous amount about web development and the challenges that come with it. I found that I would have had significantly less trouble developing Picky as a local service than as a web application. Working with HTML, JS, and CSS, especially CSS, was extremely painful since my prior experience was minimal. However, I am now MUCH more comfortable working with the two and I feel that I can confidently apply these skills to future projects. 
 
 Of course, I worked on my core Python skills when developing using Flask and working with Yelp's Fusion API. I cleaned up code and added clarifying comments wherever I could to aid anyone interested in my work. Making Python, JS, HTML, and other web-appy stuff to work together was a hassle and I felt a tangible increase in resolve and grit as I worked through strange issues and vague forum answers to reach solutions to my specific issues.
 
