@@ -98,7 +98,7 @@ def query_api(term, location, offset):
     return businesses
 
 def business_info(businesses, number):
-    """returns the first photo url and the yelp url of specified business
+    """returns various data about a specified business
     Args:
         businesses(list): List of businesses from query
         number(int): Number of business in list that should be collected from
@@ -106,17 +106,42 @@ def business_info(businesses, number):
     placeholder_img = url_for('static', filename='images/not_found_v2.png')
 
     business_id = businesses[number]['id'] #returns ID of business
-
+    #response is a dictionary/JSON of the business' info
     response = get_business(API_KEY, business_id)
-    photos = response.get('photos') #photos is now a list of 3 photo urls of the business
 
+    #get name of business
+    name = response.get("name")
+
+    #get open/closed boolean
+    status = response.get("is_closed")
+
+    #get price in terms of $s
+    price = response.get("price")
+
+    # get url of business
     url = response.get('url') #url is now the url of the yelp page of the business
 
-    #If the photos are valid, return one. Else, return placeholder.
-    if photos != None and len(photos) >= 2:
-        photo_number = random.randint(0, 1)
-        return [photos[photo_number], url]
-    return [placeholder_img, url]
+    #get photo of business
+    photos = response.get('photos') #photos is now a list of 3 photo urls of the business
+    used_photo = None
+    #If the photos are valid, return one. Else, use placeholder.
+    if photos != None and len(photos) > 0:
+        used_photo = photos[0]
+    else:
+        used_photo = placeholder_img
+
+    #get rating of business
+    rating = response.get("rating")
+
+    #get distance to business in meters
+    distance = response.get("distance")
+    print(response)
+    #convert to miles
+    if distance != None:
+        distance *= 0.00062137
+
+    #         0      1      2     3       4         5         6
+    return [name, status, price, url, used_photo, rating, distance]
 
 def execute(place, term):
     """returns a list of businesses with the specified search term and location
