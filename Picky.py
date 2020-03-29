@@ -28,22 +28,33 @@ def process():
 
     random.shuffle(businesses) #Prevent repetitive outcomes when using same search term
 
-    business_image_list = []
+    business_name_list = []
+    business_price_list = []
     business_url_list = []
+    business_img_list = []
+    business_distance_list = []
     business_rating_list = []
     counter = 0
 
     #Loop through each business found and append its images and Yelp URL to respective lists
     for business in businesses:
         info = business_info(businesses, counter)
-        print(info)
-        business_image_list.append(info[0])
-        business_url_list.append(info[1])
-        #business_rating_list.append(info[])
+        business_name_list.append(info[0])
+        business_price_list.append(info[2])
+        business_url_list.append(info[3])
+        business_img_list.append(info[4])
+        business_rating_list.append(info[5])
+        business_distance_list.append(info[6])
         counter += 1
 
     #Provide the browse page with the images, Yelp URLS, and the number of businesses found
-    return render_template('browse.html', image_list=business_image_list, url_list=business_url_list, MAX_RESULTS=len(businesses))
-
+    return render_template('browse.html',
+        name_list=business_name_list,
+        price_list=business_price_list,
+        url_list=business_url_list, 
+        img_list=business_img_list, 
+        rating_list=business_rating_list,
+        distance_list=business_distance_list, 
+        MAX_RESULTS=len(businesses))
 if __name__ == '__main__':
 	app.run()
