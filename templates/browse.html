@@ -3,42 +3,76 @@
 <head>
 	<title>Picky</title>
 	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+	<link rel="icon" href="static/images/favicon.ico">
 	<script type="text/javascript">
-		<!-- Convert the python image and url lists to JSON and store them in variables -->
-		var img_list = {{image_list|tojson}};
-		var url_list = {{url_list|tojson}};
+
+		//Convert the python image and url lists to JSON and store them in variables
 		var counter = 0;
+		var name_list = {{name_list|tojson}};
+		var price_list = {{price_list|tojson}};
+		var url_list = {{url_list|tojson}};
+		var img_list = {{img_list|tojson}};
+		var rating_list = {{rating_list|tojson}};
+		var distance_list = {{distance_list|tojson}}; 
 		
-		<!-- This runs when the "Another one" button is clicked. It changes the image and url to the next Yelp business on the list. If there are no more results available, then do not change the image/url and display a message. -->
-		function increment(){
+		
+		
+		var rating_list = {{rating_list|tojson}}; 
+		 
+		function set_fields(counter) {
+			var name = document.getElementById('name');
+			name.innerHTML = name_list[counter];
+			var price = document.getElementById('price');
+			price.innerHTML = "Price: " + price_list[counter];
 			var anchor = document.getElementById('yelp_anchor');
+			anchor.href = url_list[counter];
 			var image = document.getElementById('yelp_img');
+			image.src = img_list[counter];
+			var rating = document.getElementById('rating');
+			rating.innerHTML = "Star Rating: " + rating_list[counter];
+		}
+
+		function initialize() {
+			set_fields(counter);
+		}
+		
+		//This runs when the "Another one" button is clicked. It changes the image and url to the next Yelp business on the list. If there are no more results available, then do not change the image/url and display a message.
+		function increment(){
 			if (counter < {{MAX_RESULTS}} - 1){
 				counter += 1;
 			}
 			if (counter >= 1){
-				anchor.href = url_list[counter];
-				image.src = img_list[counter];
+				set_fields(counter);
 			}
 			if (counter == {{MAX_RESULTS}} - 1){
-				document.getElementById('title').innerHTML = "You've reached your maximum for this session. Click here to return!";
+				document.getElementById('title').innerHTML = "Session max reached. Click me to return!";
 			}
 		}
+
 	</script>
 </head>
-<body>
+<body onload="initialize()">
 	<div class='center'>
 		<a href="{{url_for('index')}}">
 			<h1 id='title'>Picky!</h1>
 		</a>
-		<a href="{{url_list[0]}}" id="yelp_anchor" target="_blank">
-			<img src="{{image_list[0]}}" id="yelp_img" height="500">
-		</a> <br> <br>
+
+		<a href="" id="yelp_anchor" target="_blank">
+			<h2 id="name"></h2>
+			<img src="" id="yelp_img" height="500">
+		</a> 
+
+		<br> <br>
+
+		<h3 id="price"></h3>
+		<h3 id="rating"></h3>
+
+		<br> <br>
 
 		<a class="myButton" onclick="increment();">Another One!</a> <br> <br>
 
 		<small>
-			Images courtesy of <a class='link' href="https://www.yelp.com/" target="_blank">Yelp.com.</a> <br>
+			Images courtesy of <a class='link' href="https://www.yelp.com/" target="_blank">Yelp.com</a> and respective owners.<br>
 			Website by <a class='link' href="https://www.linkedin.com/in/tedyarmoski/" target="_blank">Ted Yarmoski.</a>
 		</small>
 	</div>
