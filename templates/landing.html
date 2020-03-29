@@ -4,9 +4,6 @@
 	<title>Picky</title>
 	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
 	<link rel="icon" href="static/images/favicon.ico">
-	<meta property='og:title' content='Picky!'/>
-        <meta property='og:image' content="{{url_for('static', filename='logo.png')}}"/>
-        <meta property='og:description' content='Find your new favorite place.'/>
 </head>
 <body id='body'>
 	<div class='center'>
@@ -14,7 +11,11 @@
 			<h1 id='title'>Picky!</h1>
 		</a>
 		<form method="post" action="{{url_for('process')}}">
-			<input type="text" name="location_input" size="35" placeholder="Enter a location, then wait for me to load :)">
+			<input type="text" name="location_input" size="35" placeholder="Enter a location, then wait for me to load :)" style="text-align:center">
+			<br>
+			<br>
+			<input type="text" name="searchterm_input" size="35" placeholder="Optional search term (dinner, hiking, spa, etc.)" style="text-align:center">
+			<input type="submit" style="visibility: hidden; position: absolute;">
 		</form>
 		{% with messages = get_flashed_messages() %}
 			{%if messages %}
