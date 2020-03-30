@@ -4,18 +4,25 @@
 	<title>Picky</title>
 	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
 	<link rel="icon" href="static/images/favicon.ico">
+	<script type="text/javascript">
+		function showLoader() {
+			document.getElementById("loader").className = "lds-ellipsis";
+		}
+	</script>
 </head>
 <body id='body'>
 	<div class='center'>
 		<a href="{{url_for('about')}}">
 			<h1 id='title'>Picky!</h1>
 		</a>
-		<form method="post" action="{{url_for('process')}}">
+		<form onsubmit="showLoader();" method="post" action="{{url_for('process')}}">
 			<input type="text" name="location_input" size="35" placeholder="Enter a location, then wait for me to load :)" style="text-align:center">
 			<br>
 			<br>
 			<input type="text" name="searchterm_input" size="35" placeholder="Optional search term (dinner, hiking, spa, etc.)" style="text-align:center">
-			<input type="submit" style="visibility: hidden; position: absolute;">
+			<br>
+			<br>
+			<input class="disableHighlight" type="submit">
 		</form>
 		{% with messages = get_flashed_messages() %}
 			{%if messages %}
@@ -24,6 +31,7 @@
 				{% endfor %}
 			{% endif %}
 		{% endwith %}
+		<div id="loader" class=""><div></div><div></div><div></div><div></div></div>
 	</div>
 </body>
 </html>
