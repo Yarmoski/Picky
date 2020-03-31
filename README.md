@@ -34,6 +34,7 @@ After running the idea by some of my friends, I found that there was genuine int
 ## Roadmap of features
 - ~~Non-food attractions mode~~
 - ~~Display other stats such as rating, price~~
+- ~~Small user-friendliness changes (submit button, loading indicator)~~
 - Precise location (long, lat)
 - ~~Custom search terms~~
 - User-created saved list of businesses per session
