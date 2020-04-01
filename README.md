@@ -29,7 +29,9 @@ Settling on an activity is ALWAYS a hassle with my friends. They are usually ind
 
 Picky aims to solve this problem by presenting food from local restaurants in a fashion similar to the dating app Tinder. Using the power of images, Picky skips the annoying social interaction that comes bundled with ~~picking a place to eat~~ deciding what to do.
 
-After running the idea by some of my friends, I found that there was genuine interest which motivated me to spend my winter break working on and learning new information that would help me on Picky. 
+After running the idea by some of my friends, I found that there was genuine interest which motivated me to spend time working on and learning new information that would help me on Picky. 
+
+I decided to revisit Picky and continue adding more features in anticipation for the burst of activity I expect once the COVID-19 quarantines come out of effect. Picky is a great tool to get back into the public world.
 
 ## Roadmap of features
 - ~~Non-food attractions mode~~
