@@ -170,6 +170,7 @@ def execute(place, term):
 
 
     #if the businesses2 list is not empty, add it onto businesses
+    #businesses 2 list is empty if there are not enough Yelp results to populate it
     if businesses2:
         businesses = businesses + businesses2
 
